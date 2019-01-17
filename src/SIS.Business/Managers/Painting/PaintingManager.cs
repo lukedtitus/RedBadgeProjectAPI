@@ -37,8 +37,8 @@ namespace RedStarter.Business.Managers.Painting
         public async Task<bool> UpdatePainting(PaintingUpdateDTO dto)
         {
             var rao = _mapper.Map<PaintingUpdateRAO>(dto);
-            var returnedURL = _engine.UpdateImageAndGetUrl(dto);
-            rao.ImageUrl = returnedURL;
+            //var returnedURL = _engine.UpdateImageAndGetUrl(dto);
+            //rao.ImageUrl = returnedURL;
 
 
             if (await _repository.UpdatePainting(rao))

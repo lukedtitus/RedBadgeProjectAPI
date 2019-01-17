@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace RedStarter.Database.Migrations
 {
-    public partial class initial : Migration
+    public partial class laura : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

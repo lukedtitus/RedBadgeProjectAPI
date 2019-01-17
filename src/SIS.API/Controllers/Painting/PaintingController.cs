@@ -50,7 +50,7 @@ namespace RedStarter.API.Controllers.Painting
 
         [HttpPut("{id}")]
         //[Authorize(Roles = "Admin")]
-        public async Task<IActionResult> UpdatePainting([FromForm]PaintingUpdateRequest request, int id)
+        public async Task<IActionResult> UpdatePainting([FromBody]PaintingUpdateRequest request, int id)
         {
             if (!ModelState.IsValid)
             {

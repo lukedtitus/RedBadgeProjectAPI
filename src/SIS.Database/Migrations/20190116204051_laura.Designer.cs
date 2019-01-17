@@ -10,8 +10,8 @@ using RedStarter.Database.Contexts;
 namespace RedStarter.Database.Migrations
 {
     [DbContext(typeof(SISContext))]
-    [Migration("20190116154717_initial")]
-    partial class initial
+    [Migration("20190116204051_laura")]
+    partial class laura
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
