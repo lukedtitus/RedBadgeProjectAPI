@@ -28,30 +28,32 @@ namespace RedStarter.API.Controllers.Purchase
             _manager = manager;
         }
 
-        [HttpPost]
+        //[HttpPost]
         //[Authorize(Roles = "Admin")] 
-        public async Task<IActionResult> PostPurchase(PurchaseCreateRequest request)
-        {
+        //public async Task<IActionResult> PostPurchase(PurchaseCreateRequest request)
+        //{
 
-            if (!ModelState.IsValid) 
-            {
-                return StatusCode(400);
-            }
+        //    if (!ModelState.IsValid) 
+        //    {
+        //        return StatusCode(400);
+        //    }
 
-            var dto = _mapper.Map<PurchaseCreateDTO>(request);
-            dto.PurchaseDate = DateTime.Now;
+        //    var dto = _mapper.Map<PurchaseCreateDTO>(request);
+        //    dto.PurchaseDate = DateTime.Now;
 
-            if (await _manager.CreatePurchase(dto))
-                return StatusCode(201);
+        //    if (await _manager.CreatePurchase(dto))
+        //        return StatusCode(201);
 
-            throw new Exception(); 
-        }
+        //    throw new Exception(); 
+        //}
 
         [HttpPost]
-        public async Task<IActionResult> CreateCharge(PurchaseCreateChargeRequest request)
+        [Route("CreateCharge")]
+        public async Task<IActionResult> CreateCharge([FromBody]PurchaseCreateChargeRequest request)
         {
             var dtoToken = _mapper.Map<PurchaseCreateChargeDTO>(request);
             var success = await _manager.CreateCharge(dtoToken);
+            var success2 = await _manager.CreatePurchase(dtoToken);
             return Ok();
         }
 

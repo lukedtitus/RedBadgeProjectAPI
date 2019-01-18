@@ -12,7 +12,7 @@ using RedStarter.Business.DataContract.Painting;
 
 namespace RedStarter.API.Controllers.Painting
 {
-    [AllowAnonymous]
+    
     [Route("api/[controller]")]
     [ApiController]
     public class PaintingController : Controller

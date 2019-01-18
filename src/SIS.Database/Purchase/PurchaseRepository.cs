@@ -22,7 +22,7 @@ namespace RedStarter.Database.Purchase
             _mapper = mapper;
         }
 
-        public async Task<bool> CreatePurchase(PurchaseCreateRAO rao)
+        public async Task<bool> CreatePurchase(PurchaseCreateChargeRAO rao)
         {
             var entity = _mapper.Map<PurchaseEntity>(rao);
 
@@ -54,5 +54,6 @@ namespace RedStarter.Database.Purchase
 
             return await _context.SaveChangesAsync() == 1;
         }
+
     }
 }
